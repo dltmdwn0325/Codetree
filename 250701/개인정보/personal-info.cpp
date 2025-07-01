@@ -38,6 +38,9 @@ int main() {
         people[i] = Person(name, height, weight);
     }
 
+    cout << fixed;
+    cout.precision(1);
+
     sort(people, people+5, Cmp_n);
     cout << "name" << endl;
     for (int i=0; i<5; i++) {
