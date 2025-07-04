@@ -19,7 +19,7 @@ string Convert_B(int n, int b) {
             binary[cnt++] = n;
             break;
         }
-        binary[cnt++] = n%2;
+        binary[cnt++] = n%b;
         n /= b;
     }
     for (int i=cnt-1; i>=0; i--) {
