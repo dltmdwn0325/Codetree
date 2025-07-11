@@ -59,7 +59,7 @@ int main() {
         if (dir == 'L') {
             end = start - x;
             for (int j=start; j>end; j--) {
-                path[j]++;
+                path[j-1]++;
             }
         }
         else {
@@ -68,7 +68,7 @@ int main() {
                 path[j]++;
             }
         }
-        start = end+1;
+        start = end;
     }
 
     int cnt = 0;
