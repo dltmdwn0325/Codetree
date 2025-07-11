@@ -17,21 +17,18 @@ int main() {
         cin >> x >> dir;
         if (dir == 'L') {
             end = start - x;
-            for (int j=start; j>end; j--) {
-                path[j]++;
-            }
         }
         else {
             end = start + x;
-            for (int j=start; j<end; j++) {
+        }
+        for (int j=min(start, end); j<max(start, end); j++) {
                 path[j]++;
             }
-        }
         start = end;
     }
 
     int cnt = 0;
-    for (int i=0; i<=MAX_N; i++) {
+    for (int i=0; i<MAX_N; i++) {
         if (path[i] >= 2) {
             cnt++;
         }
