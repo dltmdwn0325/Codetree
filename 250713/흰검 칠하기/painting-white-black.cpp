@@ -2,8 +2,8 @@
 
 using namespace std;
 
-#define MAX_N 1000
-#define OFFSET 100
+#define MAX_N 3000
+#define OFFSET 1000
 
 int tile[MAX_N][2] = {0, };
 int color[MAX_N]; // 0:White, 1:Black, 2:Gray, -1:None
