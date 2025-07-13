@@ -42,6 +42,10 @@ int main() {
     int area = 0;
     for (int i=x1[0]; i<=max_x; i++) {
         for (int j=y1[0]; j<=max_y; j++) {
+            if (x1[0]==max_x && y1[0]==max_y) {
+                area = 0;
+                break;
+            }
             area++;
         }
     }
