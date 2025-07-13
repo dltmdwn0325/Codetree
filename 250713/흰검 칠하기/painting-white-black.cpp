@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define MAX_N 3000
+#define MAX_N 100000
 #define OFFSET 1000
 
 int tile[MAX_N][2] = {0, };
