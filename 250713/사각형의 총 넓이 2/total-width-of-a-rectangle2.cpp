@@ -19,8 +19,8 @@ int main() {
         int x2, y2;
         cin >> x1 >> y1 >> x2 >> y2;
 
-        for (int i=x1; i<x2; i++) {
-            for (int j=y1; j<y2; j++) {
+        for (int i=cur+x1; i<cur+x2; i++) {
+            for (int j=cur+y1; j<cur+y2; j++) {
                 if (dim[i][j] > 0) continue;
                 dim[i][j]++;
                 result += dim[i][j];
