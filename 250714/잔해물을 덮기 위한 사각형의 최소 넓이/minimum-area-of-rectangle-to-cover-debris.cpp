@@ -29,10 +29,13 @@ int main() {
         }
     }
 
+    int min_x = x2[0], min_y = y2[0];
     int max_x = x1[0], max_y = y1[0];
     for (int i=x1[0]; i<x2[0]; i++) {
         for (int j=y1[0]; j<y2[0]; j++) {
             if (checked[i][j] == 1) {
+                if (i<min_x) min_x = i;
+                if (j<min_y) min_y = j;
                 if (i>max_x) max_x = i;
                 if (j>max_y) max_y = j;
             }
@@ -40,9 +43,9 @@ int main() {
     }
 
     int area = 0;
-    for (int i=x1[0]; i<=max_x; i++) {
-        for (int j=y1[0]; j<=max_y; j++) {
-            if (x1[0]==max_x && y1[0]==max_y) {
+    for (int i=min_x; i<=max_x; i++) {
+        for (int j=min_y; j<=max_y; j++) {
+            if (min_x==max_x && min_y==max_y) {
                 area = 0;
                 break;
             }
