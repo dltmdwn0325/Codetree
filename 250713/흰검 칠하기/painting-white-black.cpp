@@ -3,7 +3,7 @@
 using namespace std;
 
 #define MAX_N 100000
-#define OFFSET 1000
+#define OFFSET 50000
 
 int tile[MAX_N][2] = {0, };
 int color[MAX_N]; // 0:White, 1:Black, 2:Gray, -1:None
