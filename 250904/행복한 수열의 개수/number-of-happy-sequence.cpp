@@ -17,25 +17,27 @@ int main() {
 
     int answer = 0;
     for (int i=0; i<n; i++) {
-        int cnt_r = 1;
+        int cnt = 1, best = 1;
         for (int j=0; j<n-1; j++) {
             if (grid[i][j] == grid[i][j+1]) {
-                cnt_r++;
+                cnt++;
             }
-            else cnt_r = 1;
+            else cnt = 1;
+            best = max(cnt, best);
         }
-        if (cnt_r>=m) answer++;
+        if (best>=m) answer++;
     }
 
     for (int j=0; j<n; j++) {
-        int cnt_c = 1;
+        int cnt = 1, best = 1;
         for (int i=0; i<n-1; i++) {
             if (grid[i][j] == grid[i+1][j]) {
-                cnt_c++;
+                cnt++;
             }
-            else cnt_c = 1;
+            else cnt = 1;
+            best = max(cnt, best);
         }
-        if (cnt_c>=m) answer++;
+        if (best>=m) answer++;
     }
 
     cout << answer;
