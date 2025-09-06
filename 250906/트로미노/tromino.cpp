@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// 4x4에서 제일 작은 수 하나 빼기
 int Max_Block1(const vector<vector<int>>& grid, int n, int m) {
     int best = 0;
     for (int i=0; i<n-1; i++) {
@@ -17,6 +18,7 @@ int Max_Block1(const vector<vector<int>>& grid, int n, int m) {
     return best;
 }
 
+// 가로/세로 3줄 확인
 int Max_Block2(const vector<vector<int>>& grid, int n, int m) {
     int best = 0;
 
@@ -24,6 +26,7 @@ int Max_Block2(const vector<vector<int>>& grid, int n, int m) {
     for (int i=0; i<n; i++) {
         if (m < 3) continue;
         int window = grid[i][0] + grid[i][1] + grid[i][2];
+        best = max(best, window);
         for (int j=3; j<m; j++) {
             window += grid[i][j] - grid[i][j-3];
             best = max(best, window);
@@ -34,6 +37,7 @@ int Max_Block2(const vector<vector<int>>& grid, int n, int m) {
     for (int j=0; j<m; j++) {
         if (n < 3) continue;
         int window = grid[0][j] + grid[1][j] + grid[2][j];
+        best = max(best, window);
         for (int i=3; i<n; i++) {
             window += grid[i][j] - grid[i-3][j];
             best = max(best, window);
